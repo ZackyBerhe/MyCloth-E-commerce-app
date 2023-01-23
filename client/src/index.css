@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Height for home Slider */
+.custom {
+  height: calc(100vh - 80px);
+}
+
+/* Hide scroll bar in slider */
+
+.noScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+.noScrollBar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
