@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsChevronDown, BsPerson, BsCart2 } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
-import EthiopianFlag from "../imgs/Ethiopian_Flag.jpg";
+import Cart from "../Components/Cart";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [cartOpen, setCartOpen] = useState(false);
   return (
     <>
+      {cartOpen && <Cart />}
       <div className="flex w-full justify-between items-center p-6 font-medium text-gray-50 h-20">
         <div className="flex gap-6">
           <div className="flex gap-2 items-center">
@@ -46,7 +48,10 @@ const Navbar = () => {
             <BiSearch className="text-2xl" />
             <BsPerson className="text-2xl" />
             <AiOutlineHeart className="text-2xl" />
-            <div className="relative ">
+            <div
+              onClick={() => setCartOpen((prev) => !prev)}
+              className="relative cursor-pointer"
+            >
               <BsCart2 className="text-2xl" />
               <span className="p-1 text-[12px] flex items-center justify-center bg-blue-500 rounded-full text-white font-medium h-4 w-4 absolute -right-1 -top-1">
                 0

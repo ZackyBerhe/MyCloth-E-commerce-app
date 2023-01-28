@@ -3,8 +3,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home/Home";
-import Product from "./Pages/Product/Product";
-import Products from "./Pages/Products/Products";
+import Products from "./Pages/Product/Products";
+import Product from "./Pages/Products/Product";
 
 const Layout = () => {
   return (
@@ -27,11 +27,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/product",
+        path: "/products/:id",
         element: <Products />,
       },
       {
-        path: "/products/:id",
+        path: "/product/:id",
         element: <Product />,
       },
     ],
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="bg-slate-800">
+    <div className="bg-slate-800 prevent-select">
       <RouterProvider router={router} />
     </div>
   );
